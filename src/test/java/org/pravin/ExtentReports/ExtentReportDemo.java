@@ -1,5 +1,6 @@
 package org.pravin.ExtentReports;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -67,7 +68,9 @@ public class ExtentReportDemo {
 		ExtentTest test = extent.createTest("Initial Demo");
 		WebDriverManager.chromedriver().setup();
 		ChromeDriver driver  = new ChromeDriver();
-		driver.get("https://mvnrepository.com/");
+		driver.get("https://hr.theadroithr.com/users/sign_in");
+		driver.findElement(By.id("user_email")).sendKeys("pparab995@gmail.com");
+		driver.findElement(By.id("user_password")).sendKeys("Test@1234");
 		System.out.println(driver.getTitle()); 	
 		Thread.sleep(3000);
 		driver.close();
